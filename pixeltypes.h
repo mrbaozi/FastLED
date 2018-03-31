@@ -38,6 +38,18 @@ struct CHSV {
 		uint8_t raw[3];
 	};
 
+  /// Array access operator to index into the crgb object
+	inline uint8_t& operator[] (uint8_t x) __attribute__((always_inline))
+    {
+        return raw[x];
+    }
+
+    /// Array access operator to index into the crgb object
+    inline const uint8_t& operator[] (uint8_t x) const __attribute__((always_inline))
+    {
+        return raw[x];
+    }
+
     /// default values are UNITIALIZED
     inline CHSV() __attribute__((always_inline))
     {
